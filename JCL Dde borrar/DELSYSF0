@@ -1,0 +1,32 @@
+//DELSYSF  JOB 'C8402P,B9222070,S=I','EDNA GARDNER',                    00010000
+//      CLASS=B,MSGCLASS=H,NOTIFY=&SYSUID,                              00020000
+//      MSGLEVEL=(1,1),REGION=4096K                                     00030000
+//S1      EXEC PGM=IEHLIST                                              00040000
+//SYSPRINT DD DSN=&&INTER1,VOL=SER=ZUSER2,                              00060000
+//          DISP=(NEW,PASS),SPACE=(CYL,(1,1)),UNIT=3390                 00060100
+//DD1      DD UNIT=3390,VOL=SER=ZASYS1,DISP=SHR                         00061000
+//SYSIN    DD *                                                         00070000
+ LISTVTOC VOL=3390=ZASYS1                                               00080000
+/*                                                                      00090000
+//*                                                                     00130000
+//* USE SORT                                                            00140000
+//*                                                                     00150000
+//ST1      EXEC PGM=SORT                                                00160000
+//SYSOUT   DD SYSOUT=*                                                  00170000
+//SORTIN   DD DSN=&&INTER1,DISP=SHR                                     00180000
+//SORTOUT  DD DSN=&&INTER2,DISP=(NEW,PASS),UNIT=3390,                   00181000
+//         VOL=SER=ZUSER2,SPACE=(TRK,(2,2),RLSE),                       00182000
+//         DCB=(RECFM=FB,LRECL=65,BLKSIZE=13000)                        00183000
+//SYSIN DD *                                                            00200000
+  SORT FIELDS=COPY                                                      00210000
+  INCLUDE COND=(2,5,CH,EQ,C'SYS13')                                     00220000
+  OUTREC FIELDS=(C'   DEL  ',X'7D',2,39,X'7D',C'  NVR FILE(DD1) ')      00221000
+/*                                                                      00240000
+//* DELETE                                                              00249300
+//*                                                                     00249400
+//ST1      EXEC PGM=IDCAMS                                              00249500
+//SYSPRINT DD SYSOUT=*                                                  00249600
+//DD1       DD    VOL=SER=ZASYS1,UNIT=3390,DISP=OLD                     00249700
+//SYSIN     DD DSN=&&INTER2,DISP=SHR                                    00249900
+//                                                                      00251000
+//                                                                      00260000

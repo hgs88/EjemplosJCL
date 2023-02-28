@@ -1,0 +1,42 @@
+ ADDUSER ADCDMST  OWNER(SYS1    ) DFLTGRP(SYS1    )   +
+         PASSWORD(ADCDMST ) NAME('ADCD MASTER         ')
+ ALTUSER ADCDMST  TSO(PROC(ISPFPROC))  ACCTNUM(ACCT#   ) +
+         SIZE(00000040)  MAXSIZE(0000000000)  UNIT(        ) )
+ ALTUSER ADCDMST  OMVS(UID(0000000000)  HOME(/u        )  PROGRAM(/bin/sh ) )
+ CONNECT ADCDMST GROUP(SYS1    ) OWNER(SYS1    ) AUTHORITY(USE     )
+ PERMIT  ACCT#                                              +
+         CLASS(ACCTNUM ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  *                                                  +
+         CLASS(PROGRAM ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  TN3270.*                                           +
+         CLASS(STARTED ) ID(ADCDMST ) ACCESS(ALTER   )
+ PERMIT  TN3270                                             +
+         CLASS(STARTED ) ID(ADCDMST ) ACCESS(ALTER   )
+ PERMIT  ACCT                                               +
+         CLASS(TSOAUTH ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  JCL                                                +
+         CLASS(TSOAUTH ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  MOUNT                                              +
+         CLASS(TSOAUTH ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  OPER                                               +
+         CLASS(TSOAUTH ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  DBSPROC                                            +
+         CLASS(TSOPROC ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  DBSPROC8                                           +
+         CLASS(TSOPROC ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  DBSPROC9                                           +
+         CLASS(TSOPROC ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  ISPFLITE                                           +
+         CLASS(TSOPROC ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  ISPFPROC                                           +
+         CLASS(TSOPROC ) ID(ADCDMST ) ACCESS(READ    )
+ PERMIT  U0                                                 +
+         CLASS(UNIXMAP ) ID(ADCDMST ) ACCESS(NONE    )
+ SETR RACLIST(ACCTNUM ) REF
+ SETR RACLIST(PROGRAM ) REF
+ SETR RACLIST(STARTED ) REF
+ SETR RACLIST(TSOAUTH ) REF
+ SETR RACLIST(TSOPROC ) REF
+ SETR RACLIST(UNIXMAP ) REF
+ SETR GENERIC(*) REF
+ SETR GLOBAL(*) REF

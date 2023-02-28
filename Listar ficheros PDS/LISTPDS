@@ -1,0 +1,11 @@
+//LISTLINK JOB 'C8402P,B9222070,S=I','JOHN EELLS',                      00010003
+//      CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID,                              00020000
+//      MSGLEVEL=(1,1),REGION=4096K                                     00030000
+//S0       EXEC PGM=IKJEFT01                                            00030100
+//SYSTERM  DD DUMMY                                                     00030200
+//SYSTSPRT DD DSN=ADCD.LIB.COBOL(TODOS),DISP=SHR                        00030304
+//SYSTSIN  DD *                                                         00030600
+ LISTDS 'ADCD.LIB.JCL' MEMBERS                                          00030704
+/*                                                                      00030800
+//                                                                      00030900
+

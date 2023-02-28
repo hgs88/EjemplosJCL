@@ -1,0 +1,58 @@
+//DEFPRO JOB ,
+// MSGCLASS=H,MSGLEVEL=(1,1),TIME=(,4),REGION=70M,
+// USER=&SYSUID,NOTIFY=&SYSUID
+//******************************
+//* DELETE EXISTING VSAM
+//******************************
+//DELETE EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=A
+//SYSIN DD *
+ DELETE VERDURA.PRODUC
+/*
+//* DEFINE KSDS
+//**************************************************************
+//DEFINE EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=A
+//SYSIN DD *
+  DEFINE CLUSTER (NAME(VERDURA.PRODUC) -
+  INDEXED -
+  RECORDS(15 15) -
+  LOG(NONE) -
+  KEYS(4 0) -
+  VOLUMES(ZUSER1) -
+  SHR(2 3) -
+  RECORDSIZE(30 30))
+/*
+//REPRO EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=*
+//SYSIN DD *
+  REPRO INDATASET(VERDURA.PRODUC.SEQ1) -
+    OUTDATASET(VERDURA.PRODUC)
+/*
+//**************************************************************
+//**************************************************************
+//* DEFINE THE FIRST ALTERNATE INDEX KEY AND BUILD PATH
+//**************************************************************
+//ALTIX1 EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=*
+//SYSIN DD *
+ DEFINE AIX -
+   (NAME(VERDURA.PRODUC.GRUPO) -
+    RECORDS(15,15) -
+    KEYS(2, 24) -
+    NONUNIQUEKEY -
+    RECORDSIZE(200 200) -
+    VOLUME(ZUSER1) -
+    SHR(2 3) -
+    RELATE(VERDURA.PRODUC)) -
+    DATA -
+    (NAME(VERDURA.PRODUC.GRUPO.DATA0)) -
+    INDEX -
+    (NAME(VERDURA.PRODUC.GRUPO.INDICE0))
+ DEFINE PATH -
+    (NAME(VERDURA.PRODUC.GRUPO.PATH0) -
+    PATHENTRY(VERDURA.PRODUC.GRUPO))
+ BLDINDEX -
+    INDATASET(VERDURA.PRODUC) -
+    OUTDATASET(VERDURA.PRODUC.GRUPO)
+/*

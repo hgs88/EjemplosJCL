@@ -1,0 +1,32 @@
+//DEFGRUP JOB ,
+// MSGCLASS=H,MSGLEVEL=(1,1),TIME=(,4),REGION=70M,
+// USER=&SYSUID,NOTIFY=&SYSUID
+//******************************
+//* DELETE EXISTING VSAM
+//******************************
+//DELETE EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=A
+//SYSIN DD *
+ DELETE VERDURA.GRUPOS
+/*
+//* DEFINE KSDS
+//**************************************************************
+//DEFINE EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=A
+//SYSIN DD *
+  DEFINE CLUSTER (NAME(VERDURA.GRUPOS) -
+  INDEXED -
+  RECORDS(14 14) -
+  LOG(NONE) -
+  KEYS(2 0) -
+  VOLUMES(ZUSER1) -
+  SHR(2 3) -
+  RECORDSIZE(14 14))
+/*
+//REPRO EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=*
+//SYSIN DD *
+  REPRO INDATASET(VERDURA.GRUPOS.SEQ1) -
+    OUTDATASET(VERDURA.GRUPOS)
+/*
+//**************************************************************

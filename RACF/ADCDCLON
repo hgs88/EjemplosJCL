@@ -1,0 +1,45 @@
+//ADCDCLON   JOB (20,FB3),TRALEY,COND=(0,NE),
+//            CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID
+//TSO EXEC PGM=IKJEFT01,DYNAMNBR=35,REGION=2000K
+//SYSTSPRT DD SYSOUT=*,
+// DCB=(RECFM=VBA,LRECL=255,BLKSIZE=259)
+//SYSTSIN DD *
+ ADDUSER USER05   OWNER(SYS1    ) DFLTGRP(SYS1    )   +
+         PASSWORD(USER05 ) NAME('USER05             ')
+ ALTUSER USER05   TSO(PROC(ISPFPROC) COMMAND(ISPF ) ACCTNUM(ACCT#   ) +
+         SIZE(4096)  MAXSIZE(4096)  UNIT(3390) )
+ ALTUSER USER05   OMVS(UID(0000000000)  HOME(/U  )  PROGRAM(/BIN/S      h ) )
+ CONNECT USER05 GROUP(SYS1     ) OWNER(SYS1    ) AUTHORITY(USE     )
+ PERMIT  ACCT#                                              +
+         CLASS(ACCTNUM ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  *                                                  +
+         CLASS(PROGRAM ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  TN3270.*                                           +
+         CLASS(STARTED ) ID(USER05 ) ACCESS(ALTER    )
+ PERMIT  TN3270                                             +
+         CLASS(STARTED ) ID(USER05 ) ACCESS(ALTER    )
+ PERMIT  ACCT                                               +
+         CLASS(TSOAUTH ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  JCL                                                +
+         CLASS(TSOAUTH ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  MOUNT                                              +
+         CLASS(TSOAUTH ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  OPER                                               +
+         CLASS(TSOAUTH ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  DBSPROC                                            +
+         CLASS(TSOPROC ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  DBSPROC8                                           +
+         CLASS(TSOPROC ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  DBSPROC9                                           +
+         CLASS(TSOPROC ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  ISPFLITE                                           +
+         CLASS(TSOPROC ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  ISPFPROC                                           +
+         CLASS(TSOPROC ) ID(USER05 ) ACCESS(READ     )
+ PERMIT  U0                                                 +
+         CLASS(UNIXMAP ) ID(USER05 ) ACCESS(NONE     )
+ SETR RACLIST(ACCTNUM ) REF
+ SETR RACLIST(STARTED ) REF
+ SETR RACLIST(TSOPROC ) REF
+ SETR GENERIC(*) REF
+ SETR GLOBAL(*) REF

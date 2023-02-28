@@ -1,0 +1,363 @@
+//IBMCLONE   JOB (20,FB3),TRALEY,COND=(0,NE),
+//            CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID
+//TSO EXEC PGM=IKJEFT01,DYNAMNBR=35,REGION=2000K
+//SYSTSPRT DD SYSOUT=*,
+// DCB=(RECFM=VBA,LRECL=255,BLKSIZE=259)
+//SYSTSIN DD *
+ ADDUSER MYUSER3  OWNER(IBMUSER )DFLTGRP(SYS1    )   +
+         PASSWORD(MYUSER3 ) NAME('MYUSER3             ')
+ ALTUSER MYUSER3  TSO(PROC(ISPFPROC) COMMAND(ISPF) ACCTNUM(ACCT#   ) +
+         SIZE(2048)  MAXSIZE(2096128)  UNIT(3390) )
+ ALTUSER MYUSER3  OMVS(UID(0000000000)  HOME(/u  )  PROGRAM(/bin/s      h ) )
+ CONNECT MYUSER3 GROUP(SYSCTLG ) OWNER(SYSCTLG ) AUTHORITY(JOIN    )
+ CONNECT MYUSER3 GROUP(SYS1    ) OWNER(SYS1    ) AUTHORITY(JOIN    )
+ CONNECT MYUSER3 GROUP(VSAMDSET) OWNER(VSAMDSET) AUTHORITY(JOIN    )
+ PERMIT  ACCT#                                              +
+         CLASS(ACCTNUM ) ID(MYUSER3 ) ACCESS(READ    )
+ PERMIT  CB.BIND.*                                          +
+         CLASS(CBIND   ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CB.*                                               +
+         CLASS(CBIND   ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB7G.BATCH                                         +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB7G.DIST                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB7G.MASS                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB7G.RRSAF                                         +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB7G.SASS                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB7G.WLM_REFRESH.DB7GENVJ                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB7G.WLM_REFRESH.DB7GENV1                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB7G.WLM_REFRESH.DB7GRFSH                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB8G.BATCH                                         +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB8G.DIST                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB8G.MASS                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB8G.RRSAF                                         +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB8G.SASS                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB8G.WLM_REFRESH.DB8GENVJ                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB8G.WLM_REFRESH.DB8GENV1                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB8G.WLM_REFRESH.DB8GRFSH                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB9G.BATCH                                         +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB9G.DIST                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB9G.MASS                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB9G.RRSAF                                         +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB9G.SASS                                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB9G.WLM_REFRESH.DB9GENVJ                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB9G.WLM_REFRESH.DB9GENV1                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB9G.WLM_REFRESH.DB9GRFSH                          +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DSN.WLM_REFRESH.DB7GENVJ                           +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DSN.WLM_REFRESH.DB7GENV1                           +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DSN.WLM_REFRESH.DB8GENVJ                           +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DSN.WLM_REFRESH.DB8GENV1                           +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DSN.WLM_REFRESH.DB9GENVJ                           +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DSN.WLM_REFRESH.DB9GENV1                           +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DSN1.RRSAF                                         +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  SYSPROC.WLM_REFRESH.DB7GRFSH                       +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  SYSPROC.WLM_REFRESH.DB8GRFSH                       +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  SYSPROC.WLM_REFRESH.DB9GRFSH                       +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  SYSPROC.WLM_REFRESH.WLMENV1                        +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  SYSPROC.WLM_REFRESH.WLMENV2                        +
+         CLASS(DSNR    ) ID(MYUSER3 ) ACCESS(READ    )
+ PERMIT  DITTO.*                                            +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  STGADMIN.ADR.*                                     +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  STGADMIN.IDC.*                                     +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  STGADMIN.IGD.*                                     +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  STGADMIN.IGG.*                                     +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  STGADMIN.*                                         +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  AOPADMIN                                           +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPX.DAEMON                                         +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPX.FILEATTR.APF                                   +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(READ    )
+ PERMIT  BPX.FILEATTR.PROGCTL                               +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(READ    )
+ PERMIT  BPX.SERVER                                         +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPX.SUPERUSER                                      +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEAUDD.START.REQUEST                              +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCECDSD.START.REQUEST                              +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEDTSTP.START.REQUEST                             +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEGDAD.START.REQUEST                              +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEKERN.START.REQUEST                              +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(UPDATE  )
+ PERMIT  DCEPWDD.START.REQUEST                              +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCESECD.START.REQUEST                              +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DFSKERN.START.REQUEST                              +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(UPDATE  )
+ PERMIT  MVSADMIN.WLM.POLICY                                +
+         CLASS(FACILITY) ID(MYUSER3 ) ACCESS(UPDATE  )
+ PERMIT  BPXBINIT                                           +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXEV003                                           +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXOLVD                                            +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXOV                                              +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXPLPKA                                           +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXUCSNM                                           +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXUEYI1                                           +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXUI1EY                                           +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXZ24                                             +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  RLOGIND                                            +
+         CLASS(PROGRAM ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CBS390                                             +
+         CLASS(PTKTDATA) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CB.*.BBOASR1                                       +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CB.*.BBOASR2                                       +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CB.*.CBDAEMON                                      +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CB.*.CBINTFRP                                      +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CB.*.CBNAMING                                      +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CB.*.CBSYSMGT                                      +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CB.*                                               +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB7G.DB7GENVC                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB7G.DB7GENVJ                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB7G.DB7GENV1                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB7G.DB7GENV2                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB7G.DB7GENV7                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB7G.DB7GRFSH                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB8G.DB8GENVA                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB8G.DB8GENVC                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB8G.DB8GENVJ                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB8G.DB8GENV1                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB8G.DB8GENV2                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB8G.DB8GENV3                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB8G.DB8GRFSH                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GENVA                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GENVC                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GENVJ                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GENV1                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GENV2                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GENV3                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GENV4                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GENV5                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DB9G.DB9GRFSH                                  +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DB2.DSN1.WLMENV1                                   +
+         CLASS(SERVER  ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOASR1.*                                          +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOASR1S.*                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOASR2.*                                          +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOASR2S.*                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBODMN.*                                           +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOIR.*                                            +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOIRS.*                                           +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOLDAP.*                                          +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBONM.*                                            +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBONMS.*                                           +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOSMS.*                                           +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOSMSS.*                                          +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOWTR.*                                           +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPXOINIT.*                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  CATALOG.*                                          +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEAUDD.**                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCECDSD.**                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEDTSTP.**                                        +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEGDAD.**                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEKERN.**                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCEPWDD.**                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DCESECD.**                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DFS.**                                             +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DFSCM.**                                           +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DUMPSRV.*                                          +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  FTPD.*                                             +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  HTTPD1.**                                          +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  IEEVMPCR.*                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  IMWEBSRV.**                                        +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  IXGLOGR.*                                          +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  JES2.*                                             +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  LLA.*                                              +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  NFSS.*                                             +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  OMPROUTE.*                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  OMVS.*                                             +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  OSNMPD.*                                           +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  SMF.*                                              +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  SNMPQE.*                                           +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  SYSLOGD.**                                         +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  TCPIP.*                                            +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  TSO.*                                              +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  VLF.*                                              +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  VTAM.*                                             +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  XCFAS.*                                            +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  ZFS.**                                             +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  **                                                 +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  TN3270                                             +
+         CLASS(STARTED ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPX.SRV.INTERNAL                                   +
+         CLASS(SURROGAT) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPX.SRV.PRIVATE                                    +
+         CLASS(SURROGAT) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPX.SRV.PUBLIC                                     +
+         CLASS(SURROGAT) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BPX.SRV.WEBADM                                     +
+         CLASS(SURROGAT) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  MYUSER3.SUBMIT                                     +
+         CLASS(SURROGAT) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  ACCT                                               +
+         CLASS(TSOAUTH ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  JCL                                                +
+         CLASS(TSOAUTH ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  MOUNT                                              +
+         CLASS(TSOAUTH ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  OPER                                               +
+         CLASS(TSOAUTH ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  RECOVER                                            +
+         CLASS(TSOAUTH ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  BBOPROC                                            +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DBSPROC                                            +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(READ    )
+ PERMIT  DBSPROC8                                           +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(READ    )
+ PERMIT  DBSPROC9                                           +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  DYNISPF                                            +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  IKJACCNT                                           +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  ISPFLITE                                           +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(READ    )
+ PERMIT  ISPFPROC                                           +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  OMVSPROC                                           +
+         CLASS(TSOPROC ) ID(MYUSER3 ) ACCESS(ALTER   )
+ PERMIT  U0                                                 +
+         CLASS(UNIXMAP ) ID(MYUSER3 ) ACCESS(NONE    )
+ SETR RACLIST(ACCTNUM ) REF
+ SETR RACLIST(CBIND   ) REF
+ SETR RACLIST(DSNR    ) REF
+ SETR RACLIST(FACILITY) REF
+ SETR RACLIST(PTKTDATA) REF
+ SETR RACLIST(SERVER  ) REF
+ SETR RACLIST(STARTED ) REF
+ SETR RACLIST(SURROGAT) REF
+ SETR RACLIST(TSOAUTH ) REF
+ SETR RACLIST(TSOPROC ) REF
+ SETR RACLIST(UNIXMAP ) REF
+ SETR GENERIC(*) REF
+ SETR GLOBAL(*) REF

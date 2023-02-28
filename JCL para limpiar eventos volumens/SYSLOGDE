@@ -1,0 +1,9 @@
+//IFCDIP00 JOB CLASS=A,MSGLEVEL=(1,1),MSGCLASS=A,NOTIFY=&SYSUID         00010000
+//********************************************************************  00020000
+//* CLEAR AND INITIALIZE HARDWARE EVENT RECORDER DATASET             *  00030000
+//********************************************************************  00040000
+//IFCDIP00 EXEC PGM=IFCDIP00                                            00050000
+//SERERDS  DD  DSN=SYS1.LOGREC,DISP=OLD,                                00060000
+//             VOL=SER=ZASYS1,          <-- CHANGE TO SYSRES VOLSER     00070000
+//             UNIT=3390                <-- CHANGE TO SYSRES UNIT       00080000
+//                                                                      00090000

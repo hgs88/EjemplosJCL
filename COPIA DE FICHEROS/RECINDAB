@@ -1,0 +1,23 @@
+//GSFSOFT  JOB (),MEMBER,                                               00010000
+//         CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID,                           00020000
+//         MSGLEVEL=(1,1),REGION=8M                                     00030000
+//RECVR    EXEC PGM=IKJEFT01                                            00040000
+//SYSTSPRT DD SYSOUT=*                                                  00050000
+//SYSPRINT DD SYSOUT=*                                                  00060000
+//SYSTSIN  DD *                                                         00070000
+RECEIVE INDA('FEK.IBM.HHOP900.F1.BIN')                                  00080000
+RESTORE VOL(ZUSER2) DS('FEK.IBM.HHOP900.F1') NEW                        00090000
+RECEIVE INDA('FEK.IBM.HHOP900.F2.BIN')                                  00100000
+RESTORE VOL(ZUSER2) DS('FEK.IBM.HHOP900.F2') NEW                        00110000
+RECEIVE INDA('FEK.IBM.HHOP900.F3.BIN')                                  00120000
+RESTORE VOL(ZUSER2) DS('FEK.IBM.HHOP900.F3') NEW                        00130000
+RECEIVE INDA('FEK.IBM.HHOP900.F4.BIN')                                  00140000
+RESTORE VOL(ZUSER2) DS('FEK.IBM.HHOP900.F4') NEW                        00150000
+RECEIVE INDA('FEK.IBM.HHOP900.F5.BIN')                                  00160000
+RESTORE VOL(ZUSER2) DS('FEK.IBM.HHOP900.F5') NEW                        00170000
+RECEIVE INDA('FEK.IBM.HHOP900.F6.BIN')                                  00180000
+RESTORE VOL(ZUSER2) DS('FEK.IBM.HHOP900.F6') NEW                        00190000
+RECEIVE INDA('FEK.IBM.HHOP900.F7.BIN')                                  00200000
+RESTORE VOL(ZUSER2) DS('FEK.IBM.HHOP900.F7') NEW                        00210000
+/*                                                                      00220000
+//                                                                      00230000

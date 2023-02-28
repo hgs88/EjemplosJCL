@@ -1,0 +1,45 @@
+//SORTCOD    JOB (),TRALEY,COND=(0,NE),                                 00020001
+//            CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID                         00030000
+//*                                                                     00040000
+//* USE SORT                                                            00050000
+//*                                                                     00060000
+//ST3      EXEC PGM=SORT                                                00070000
+//SYSOUT   DD SYSOUT=*                                                  00080000
+//SORTIN   DD DSN=VERDURA.VENDEDOR,DISP=SHR                             00090001
+//SORTOUT  DD DSN=VERDURA.CODIGO.SEQ1,DISP=SHR                          00100002
+//SYSIN DD *                                                            00110000
+  SORT FIELDS=COPY                                                      00111002
+  OUTREC FIELDS=(C'VE  ',1,153)                                         00120006
+//ST3      EXEC PGM=SORT                                                00151003
+//SYSOUT   DD SYSOUT=*                                                  00152003
+//SORTIN   DD DSN=VERDURA.PRODUC,DISP=SHR                               00153003
+//SORTOUT  DD DSN=VERDURA.CODIGO.SEQ1,DISP=MOD                          00154003
+//SYSIN DD *                                                            00155003
+  SORT FIELDS=COPY                                                      00156003
+  OUTREC FIELDS=(C'PR  ',1,4,5,20)                                      00157009
+//ST3      EXEC PGM=SORT                                                00159003
+//SYSOUT   DD SYSOUT=*                                                  00159103
+//SORTIN   DD DSN=VERDURA.GRUPOS,DISP=SHR                               00159204
+//SORTOUT  DD DSN=VERDURA.CODIGO.SEQ1,DISP=MOD                          00159303
+//SYSIN DD *                                                            00159403
+  SORT FIELDS=COPY                                                      00159503
+  OUTREC FIELDS=(C'GR    ',1,2,3,12)                                    00159606
+//ST3      EXEC PGM=SORT                                                00159707
+//SYSOUT   DD SYSOUT=*                                                  00159807
+//SORTIN   DD DSN=VERDURA.CODIGO.SEQ1,DISP=SHR                          00159907
+//SORTOUT  DD DSN=VERDURA.CODIGO.SORT,DISP=MOD                          00160007
+//SYSIN DD *                                                            00160107
+  SORT FIELDS=(1,8,CH,A)                                                00160209
+//ST3      EXEC PGM=SORT                                                00160505
+//SYSOUT   DD SYSOUT=*                                                  00160605
+//SORTIN   DD DSN=VERDURA.CODIGO.SORT,DISP=SHR                          00160707
+//SORTOUT  DD DSN=VERDURA.CODIGO.SEQ2,DISP=SHR                          00160805
+//SYSIN DD *                                                            00160905
+  OPTION COPY                                                           00161005
+  OUTFIL FNAMES=SORTOUT,FTOV                                            00161105
+/*                                                                      00161203
+//                                                                      00161300
+  OUTREC FIELDS=(1,6,C',',7,4,C',',15,4,C',',19,9)                      00162001
+  SORT FIELDS=(7,4,CH,A,11,4,CH,A,15,10,CH,A)                           00170001
+  INCLUDE COND=(15,4,CH,EQ,C'2000')                                     00180001
+//ST3      EXEC PGM=SORT                                                00260007

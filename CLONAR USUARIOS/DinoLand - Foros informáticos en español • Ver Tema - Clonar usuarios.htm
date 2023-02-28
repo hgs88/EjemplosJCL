@@ -1,0 +1,1627 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+
+<!-- begin document head -->
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="MKPortal" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta content="no-cache" http-equiv="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="keywords" content="mainframe, sysplex, mvs, z/OS, zos, OS/390, os390, REXX, JCL, CLIST, Cobol, TSO, CICS, z/VM, zVM, RACF, VTAM, TCPIP, TCP/IP, SQA, CSA, Nucleus, LDAP, stem, Linux, s390, s/390, z/server, zserver, discos, 3390, 3490, 3590, 9672, shark, hardware, ISPF, FILEAID, CONTROLm, CONTROL-M, jes2, spool, page, rmf, virtual, bloques de control, rmm, hsm, sms, bcp, x37, abend, foro, foros, castellano, español, trabajo, busqueda laboral, oportunidades laborales, curriculum">
+<meta name="description" content="Tierra de dinosaurios es el sitio para profesionales de mainframe, donde encontraran foros, boletines, links y novedades en CASTELLANO.">
+ <link rel="shortcut icon" href="http://www.dinoland.com.ar/dl4.ico">
+
+  
+  <style type="text/css">
+/*
++--------------------------------------------------------------------------
+|   Cascading Style Sheet for MKportal "Forum" Portal Template
+|   ========================================
+|   by Meo aka Luponero [Amedeo de longis]
+|      Don K. Colburn [visiblesoul.net]
+|   Copyright (c) 2004-2007 mkportal.it
+|   http://www.mkportal.it
+|   Email: luponero@mclink.it
++--------------------------------------------------------------------------
+|   > MKPortal
+|   > Written By Amedeo de longis
+|   > Date started: 9.2.2004
++--------------------------------------------------------------------------
+*/
+
+/*=============================
+M
+K  global styles
+P
+=============================*/
+/* IMPORT body */
+body,
+body {
+	color: #536482;
+	background-color: #FFFFFF;
+}
+
+body {
+	font-size: 10px;
+	margin:0px; 
+	padding:0px; /* Opera 0 margin */	
+	text-align: center; /* center in IE */ 
+}
+
+/* IMPORT body background (used for SMF) */
+.importbgbody {
+	font-size: 10px;
+}
+
+/* portal wrapper */
+#mkwrapper {
+	text-align:left; /* left-align text in IE */	
+	margin: 0px auto 0px auto;
+}
+
+/* IMPORT logostrip */
+#mklogostrip,
+#importlogostrip {	
+	background-color: #8cb6e7;	
+}
+
+/* logostrip */
+#mklogostrip {
+	text-align: left;
+}
+
+/* IMPORT global font formatting */
+table,
+tr,
+td,
+.tdglobal,
+.importfont {
+	font-size: 10px; 
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+}
+
+/* global font formatting */
+table,
+tr,
+td,
+.tdglobal {
+	font-size: 10px;	
+}
+
+/* IMPORT main portal table bg (if different than body bg) */
+.tabmain,
+.importmain {	
+	font-size: 10px;	
+}
+
+/* main portal table */
+.tabmain {
+	margin:0px;
+	padding:0px;	
+}
+
+/* images */
+img { 		
+	border: 0px;
+	vertical-align: middle; /* Meo: Added in C1.2 */
+}
+
+/*=============================
+M
+K IMPORT LIGHT BACKGROUND
+P
+=============================*/
+.modulecell,
+.urlo2,
+.tabnews,
+.trattini,
+.trattini3,
+.tablemenu,
+.taburlo,
+.bg1	{ background-color: #ECF3F7; }
+
+/*=============================
+M
+K IMPORT MEDIUM BACKGROUND
+P
+=============================*/
+.navigatore,
+.tdblock,
+.moduleborder,
+.modulex,
+.mkpagecurrent,
+.bg3	{ background-color: #cadceb; }
+
+/*=============================
+M
+K IMPORT DARK BACKGROUND
+P
+=============================*/
+.urlo,
+.sottotitolo,
+.forabg {
+	background-color: #0076b1;
+	background-image: url("../phpBB3/styles/prosilver/theme/images/bg_list.gif");
+ color: #FFFFFF; padding: 4px;}
+
+/*=============================
+M
+K  border and divider styles
+P
+=============================*/
+/* vertical spacer image used in portal skin */
+/* .vspacer {
+	background-image: url(../mkportal/templates/Forum/images/punto_vert.gif);
+	background-repeat: repeat-y;
+	background-color: transparent;	
+} */
+
+/* IMPORT border-color */
+.tabmain,
+.tablemenu, /* block wrapper, chat button strip */
+.taburlo,
+.urlo2,
+.tabnews,
+.trattini,
+.trattini2,
+.trattini3,
+.mkpagelink,
+.mkpagelinklast,
+.mkpagecurrent,
+.titadmin,
+.importborders {
+	border: 1px solid #5c88c8;	
+}
+	
+.trattini { /*used only in tpl_main.php(deprecated), blog, ad_blocks.php*/
+	border-width: 1px 0 0 0;
+	border-style: dashed;
+}
+
+/* blocks admin */
+.trattini2 {
+	border-width: 0 1px 0 0;
+	border-style: dashed;
+}
+
+.trattini3 { /* used only in blog, quotes, urlobox, calendar*/
+	border-width: 0 0 1px 0;
+	border-style: dashed;
+}
+
+/*=============================
+M
+K  hyperlink styles
+P
+=============================*/
+/* IMPORT global links */
+a:link,
+a:active,
+a.uno:link,
+.importlink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #496c9f;	
+	text-decoration: none;	
+}
+
+a:visited,
+a.uno:visited,
+.importvisited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #496c9f;	
+	text-decoration: none;	
+}
+
+a:hover,
+a.uno:hover,
+.importhover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: underline;
+}
+
+/* a:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #496c9f;	
+	text-decoration: none; 	
+} */
+
+/* bold navbar, block, module links */
+a.uno:link {
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration: none
+}
+
+a.uno:visited {	
+	font-size: 10px; 
+	font-weight: bold;
+	text-decoration: none
+}
+
+
+a.uno:hover {
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* block text links */
+/* .tablemenu a:link, a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #496c9f;	
+	text-decoration: none;	
+}
+
+.tablemenu a:hover {
+	text-decoration: underline;
+}
+
+.tablemenu a:active { 
+	text-decoration: none; 	
+} */
+
+/* global contrasting text and hyperlink color */
+.mktxtcontr,
+a.mktxtcontr:link, 
+a.mktxtcontr:visited {	
+	color: #ff0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.mktxtcontr:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* contrasting text and hyperlink color 2 (admin) */
+.mktxtcontr2,
+a.mktxtcontr2:link, 
+a.mktxtcontr2:visited {
+	color: #0000ff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.mktxtcontr2:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/*=============================
+M
+K  form styles
+P
+=============================*/
+/* remove margin after closing "form" tag in MSIE */
+form {
+	margin: 0;
+	padding: 0
+}
+
+/* IMPORT form styles */
+input,
+textarea,
+select,
+.bgselect, /* input fields */
+.mkbutton, /* global submit buttons */
+.mkblkinput, /* block input */
+.mkradio, 
+.importforms
+{
+	background-color: #dfe6ef;		
+	/* border: 1px solid #4C77B6; */	
+	/* margin: 0px; */
+	/* padding: 0px;*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 10px; 
+	color: #496c9f;
+	vertical-align: middle;
+}
+
+/* set form padding and margin */
+/*.mkbutton,*/ /* global submit buttons */
+/* textarea,*/
+input,
+select,
+.bgselect, /* input fields */
+.mkblkinput /* block input */
+{
+	margin: 0px;
+	padding: 0px;
+	font-size: 9px;
+	font-weight: normal; /* needed for Mozilla */	
+}
+
+.mkbutton { /* Global submit buttons */
+	padding: 3px;
+}
+
+.mkbbbutton { /* MKP BBcode editor buttons */
+	margin: 0;
+	padding: 0;
+}
+
+/* radio/checkbox buttons - remove background color and border in IE */ 
+/* .mkradio {
+	background-color: transparent;
+	border-width: 0px;
+} */
+
+/* configure blog textarea */
+textarea.mkwrap1 {
+	overflow: auto;
+	/* width: 230px; */
+	width: 100%;
+}
+
+/* edit blog textarea */
+textarea.mkwrap2 {
+	overflow: auto;
+	width: 500px ;
+}
+
+/*=============================
+M
+K  navstrip styles
+P
+=============================*/
+/* top navstrip */
+.navigatore {	
+	vertical-align: bottom;
+	text-align: right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 9px;
+	border: 0;
+}
+
+/*=============================
+M
+K  block styles
+P
+=============================*/
+/* used in functions.php (function main_page) */
+.blocks {
+	padding: 0px;
+}
+
+/* block td cell */
+.tdblock {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	border: 0;
+	margin: 2px;	
+}
+
+/* block title bar */
+.sottotitolo {
+	vertical-align: bottom;	
+	text-align: left;
+	font-size: 11px;
+	font-weight: bold;	 
+}
+
+/* horizontal spacer between blocks */
+.tdspacer {
+	line-height: 3px;
+}
+
+/*=============================
+M
+K  module global styles
+P
+=============================*/
+/* IMPORT module table headings */
+th.modulex,
+headerbar {
+	background-color: #12A3EB;
+	background-image: url("../phpBB3/styles/prosilver/theme/images/bg_header.gif");
+	color: #FFFFFF;
+}
+th.modulex {
+	white-space: nowrap;
+}
+.modulex {
+	border-width: 0 0 0 0;
+}
+/* Reviews description text */
+.modulelite {
+	font-size: 8pt;
+	/* color:#a6bbcd;*/
+}
+
+/* block padding (news, admin) */
+.contents {
+	padding: 10px;	
+}
+
+/* module pagination links */
+.mkpagelink {
+	padding:1px 3px 1px 3px;
+	font-weight: normal;
+}
+
+.mkpagelinklast {
+	padding:1px 3px 1px 3px;
+	font-weight:normal;
+}
+
+.mkpagecurrent {
+	padding:1px 3px 1px 3px;
+	font-weight:normal;
+}
+
+/* admin cp titles with top border - used in frontend and backend */
+.titadmin {
+	margin: 0px;
+	font-size: 11px;
+	font-weight: bold;
+	border-width: 1px 0 0 0;
+	border-style: dashed;
+}
+/*=============================
+M
+K  shoutbox module styles
+P
+=============================*/
+td.taburlo{	
+	margin:5px;
+	padding:5px;
+	border: 0;	
+}
+	
+/* shouter and date cell */
+.urlo {
+	line-height: 18px;
+	vertical-align: bottom;
+	text-align: left;	
+	font-size: 11px;
+	font-weight: bold;
+	padding: 4px;		 
+}
+
+/* shout cell */
+.urlo2 {
+	padding: 4px;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	text-align: left;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/* white shouter text */
+/* .urlocontrast {	
+	color: #ffffff;
+} */
+
+/*=============================
+M
+K  news module styles
+P
+=============================*/
+/* news table with border */
+.tabnews {
+	border-width: 1px;
+	border-style: dashed;
+	margin:0px; 
+	padding:0px;
+	font-size: 10px;	
+}
+
+/*=============================
+M
+K  font styles
+P
+=============================*/
+/* red error page text */
+.mkerror {	
+	font-size: 12pt;
+	color: #ff0000;
+	font-weight:bold;
+}
+
+/* MKPQuote quotation text */
+/* .mkquote { 		
+	color: #0000ff;	
+} */
+
+/* MKPGallery module ecard, offline page */
+.ecardtitle,
+.offlinetxt {
+	font-size: 10pt; 
+	font-weight: bold;
+	text-align: center;
+}
+
+/*=============================
+M
+K  BBcode quote styles
+P
+=============================*/
+.mkquoteball {
+	font-size: 9px; 
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	background-color: #ffffff;	
+	padding: 0;	
+}
+
+.mkquotetext {
+	font-size: 10px; 
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0;	
+}
+
+table .mkquotetable{				
+	width: auto; /* IE */	
+	text-align: left;
+}
+
+/* Added in C1.2 */
+/* Table background highlight */
+.bghighlight1 {
+	background-color: #EAF8EB;
+}
+/* Table background highlight 2 */
+.bghighlight2 {
+	background-color: #EFCBCB;
+}
+/* mkportal footer copyright - Do not remove, modify or obscure the copyright text */
+.mkcopyright {
+	font-size: 10px;
+}
+.mkcopyright a {
+	text-decoration: none;
+}
+/* Calendar block current day highlighting */
+#mkcaltoday {
+	border:2px;
+	border-style:outset;
+	background-color: #ffff00;
+}
+
+/* Table Cell Alignment ltr/rtl */
+
+/* default is "left" */
+.mkalign1 {
+	text-align: left;
+}
+
+/* default is "right" */
+.mkalign2 {
+	text-align: right;
+}
+
+</style>
+
+<link rel="stylesheet" href="mkportal/modules/rss/files/simplepie.css" type="text/css" media="screen, projector" />
+
+  
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="es-ar" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<title>DinoLand - Foros informáticos en español &bull; Ver Tema - Clonar usuarios</title>
+
+
+
+<!--
+	phpBB style name: prosilver
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:
+-->
+
+<script type="text/javascript">
+// <![CDATA[
+	var jump_page = 'Introducí el número de página al que deseas saltar:';
+	var on_page = '1';
+	var per_page = '';
+	var base_url = '';
+	var style_cookie = 'phpBBstyle';
+	var style_cookie_settings = '; path=/; domain=.dinoland.com.ar';
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+
+	
+
+	/**
+	* Find a member
+	*/
+	function find_username(url)
+	{
+		popup(url, 760, 570, '_usersearch');
+		return false;
+	}
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	};
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	};
+
+// ]]>
+</script>
+<script type="text/javascript" src="./styles/prosilver/template/styleswitcher.js"></script>
+<script type="text/javascript" src="./styles/prosilver/template/forum_fn.js"></script>
+
+<link href="./styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<link href="./style.php?id=1&amp;lang=es_ar" rel="stylesheet" type="text/css" media="screen, projection" />
+
+<link href="./styles/prosilver/theme/normal.css" rel="stylesheet" type="text/css" title="A" />
+<link href="./styles/prosilver/theme/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+<link href="./styles/prosilver/theme/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+
+
+
+
+  <script type="text/javascript">
+	mkportalurl = 'http://www.dinoland.com.ar/';
+	var MKAJAX_IMAGES_PATH = "../mkportal/templates/Forum/images/mkajax/";
+    	var MKAJAX_SITEPATH = "../";
+  </script>
+  <script type="text/javascript" src="../mkportal/templates/Forum/mkp.js"></script>
+  <script type="text/javascript" src="../mkportal/templates/Forum/mkp.ext.ajax.js"></script>
+  
+<style type="text/css">td { padding: 0; }</style>
+
+</head>
+
+<body id="phpbb" class="section-index ltr" style="padding: 0px;" onload="javascript:GetPos();">
+<a name="top"></a>
+
+<!-- end document head -->
+
+<!-- begin open main table -->
+
+<div id="mkwrapper" style="width: 100%;">
+<table class="tabmain" width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+    <td width="100%" align="center">
+
+      <table border="0" width="100%" cellpadding="0" cellspacing="0">
+
+<!-- end open main table -->
+
+<!-- begin logostrip -->
+  
+ <tr>
+                  
+	  <td id="mklogostrip" style="background-image: url('../mkportal/templates/Forum/images/sf_logo.jpg')" width="100%">
+<div align="center">
+          <a href="http://www.dinoland.com.ar/index.php"><img src="../mkportal/templates/Forum/images/dino5.gif" border="0" alt="Ir al Portal" /"></a>
+
+
+ 
+<a href="http://www.dinoland.com.ar/phpBB3/index.php"><img src="../mkportal/templates/Forum/images/titulo1.gif" border="0" alt="Ir al Foro" /></a>
+
+	
+  
+ 
+</div>
+</td>
+         </tr>
+
+	
+<!-- end logostrip -->
+
+<!-- begin linkbar -->
+
+	<tr>
+	  <td>
+	    <table width="100%" align="center" cellspacing="0" cellpadding="2" border="0">
+	      <tr>
+		<td class="navigatore" style="padding: 4px;">		  
+		  
+<!-- begin link template -->
+		&nbsp;<img src="../mkportal/templates/Forum/images/atb_home.gif" style="vertical-align: middle" alt="Portal" />&nbsp;<a class="uno" href="http://www.dinoland.com.ar/index.php" title="Portal">Portal</a>
+<!-- end link template -->
+
+<!-- begin link template -->
+		&nbsp;<img src="../mkportal/templates/Forum/images/atb_forum.gif" style="vertical-align: middle" alt="Foro" />&nbsp;<a class="uno" href="../phpBB3/index.php" title="Foro">Foro</a>
+<!-- end link template -->
+&nbsp;		  
+		</td>
+	      </tr>
+	    </table>
+	  </td>
+	</tr>
+
+<!-- end linkbar -->
+
+<!-- begin shoutbox -->
+
+	<tr class="mkalign1">
+	  <td>	  
+	    <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+	      <tr>
+		<td class="urlo2" id="mkshout" colspan="2">
+		</td>
+	      </tr>
+	    </table>         
+	  </td>
+	</tr>
+
+<!-- end shoutbox -->
+	
+<!-- begin open portal body -->
+
+	<tr align="center">
+	  <td width="100%">
+	    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+	      <tr>
+
+<!-- end open portal body -->
+	      
+<!-- begin left column -->
+
+		<td id="menusx" class="mkalign1" valign="top">
+		<div id="menucontents" style="">
+		<div class="mkalign2"><a href="javascript:ColumnClose('menusx');MemoPos('MKmenusx', '1');"><img src="../mkportal/templates/Forum/images/f2.gif" border="0" alt="" /></a>&nbsp;</div>
+		  <table cellpadding="0" cellspacing="2" border="0" style="width: 140px;">
+		  
+<!-- begin block template -->
+
+		    <tr>
+		      <td class="tablemenu" valign="top">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0">
+   			  <tr>
+         		    <td>
+          		      <table border="0" cellpadding="4" cellspacing="0" width="100%">
+          			<tr>
+				  <td width="100%" class="sottotitolo" valign="middle" nowrap="nowrap">Menú Personal</td>
+         			</tr>
+         		      </table>
+         		    </td>
+			  </tr>
+			  <tr>
+         		    <td width="100%">
+		 	      <table border="0" width="100%" cellpadding="0" cellspacing="1">
+		 	      
+				<tr>
+				  <td class="tdblock">
+				  Bienvenido Invitado<br />
+				  <form method="post" action="../phpBB3/ucp.php?mode=login" >
+				    <table>
+				      <tr>
+					<td width="40%" class="tdblock mkalign1">
+					<b>User:</b>
+					</td>
+					<td width="60%" class="tdblock mkalign2"><input class="mkblkinput" type="text" name="username" size="10" /></td>
+				      </tr>
+				      <tr>
+					<td width="40%" class="tdblock mkalign1"><b>Pass:</b></td>
+					<td width="60%" class="tdblock mkalign2"><input class="mkblkinput" type="password" name="password" size="10" /></td>
+				      </tr>
+				      <tr>
+                  <td width="100%" colspan="2" class="tdglobal mkalign1">
+				  <b>Ingresar automáticamente:</b>
+                  <input type="checkbox" name="autologin" /></td>
+		  <td>
+		  <input type="hidden" name="redirect" value="/phpBB3/viewtopic.php?t=639" />
+		  <input type="hidden" name="sid" value="37b71acdce1122607b04d27a33f04f78" />
+		  <input type="hidden" name="login" value="1" />
+		  </td>
+
+		  </tr>
+				      <tr>
+					<td width="50%" class="tdblock mkalign1"></td>
+					<td width="50%" class="tdblock"><input class="mkbutton" type="submit" value="Login" name="submit" />
+					</td>
+				      </tr>
+				      <tr>
+					<td width="100%" colspan="2" class="tdblock mkalign1"><br />
+					<a class="uno" href="../phpBB3/ucp.php?mode=register">Registrarte!</a></td>
+				      </tr>
+					  
+				<tr>
+				  <td class="tdblock mkalign1" colspan="2">
+				    <a class="uno" href="../phpBB3/ucp.php?mode=sendpassword">Olvidé mi clave</a>
+				  </td>
+				</tr>
+				<tr>
+				  <td class="tdblock mkalign1" colspan="2">
+				    <a class="uno" href="../phpBB3/ucp.php?mode=resend_act">Re enviar email de activación</a>
+				  </td>
+				</tr>
+
+				    </table>
+				  </form>
+				</td>
+			      </tr>
+		
+	         	      </table>
+	  		    </td>
+			  </tr>
+			</table>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td class="tdspacer">&nbsp;</td>
+		    </tr>
+
+<!-- end block template -->
+  
+<!-- begin block template -->
+
+		    <tr>
+		      <td class="tablemenu" valign="top">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0">
+   			  <tr>
+         		    <td>
+          		      <table border="0" cellpadding="4" cellspacing="0" width="100%">
+          			<tr>
+				  <td width="100%" class="sottotitolo" valign="middle" nowrap="nowrap">Comuniquese con:</td>
+         			</tr>
+         		      </table>
+         		    </td>
+			  </tr>
+			  <tr>
+         		    <td width="100%">
+		 	      <table border="0" width="100%" cellpadding="0" cellspacing="1">
+		 	      <tr><td class="blocks"><a href="mailto: webmaster@dinoland.com.ar" target="_parent">Webmaster</a></td></tr>
+	         	      </table>
+	  		    </td>
+			  </tr>
+			</table>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td class="tdspacer">&nbsp;</td>
+		    </tr>
+
+<!-- end block template -->
+  
+<!-- begin block template -->
+
+		    <tr>
+		      <td class="tablemenu" valign="top">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0">
+   			  <tr>
+         		    <td>
+          		      <table border="0" cellpadding="4" cellspacing="0" width="100%">
+          			<tr>
+				  <td width="100%" class="sottotitolo" valign="middle" nowrap="nowrap">Búsqueda</td>
+         			</tr>
+         		      </table>
+         		    </td>
+			  </tr>
+			  <tr>
+         		    <td width="100%">
+		 	      <table border="0" width="100%" cellpadding="0" cellspacing="1">
+		 	      <tr><td class="tdblock">
+<!-- begin block link template -->
+		<img class="mkicon" src="../mkportal/templates/Forum/images/frec.gif" style="vertical-align: middle" align="left" alt="Descargas" />&nbsp;<a class="uno" href="http://www.dinoland.com.ar/index.php?ind=downloads&amp;op=search" title="Descargas">Descargas</a>
+<!-- end block link template -->
+</td></tr><tr><td class="tdblock">
+<!-- begin block link template -->
+		<img class="mkicon" src="../mkportal/templates/Forum/images/frec.gif" style="vertical-align: middle" align="left" alt="Foro" />&nbsp;<a class="uno" href="../phpBB3/search.php" title="Foro">Foro</a>
+<!-- end block link template -->
+</td></tr>
+				<tr>
+				  <td class="tdblock" align="center">
+				    <a href="http://www.google.it/"><img src="http://www.dinoland.com.ar/mkportal/modules/search/google_logo.gif" alt="Google" align="top" /></a><br />
+
+				    <form action="http://www.google.com/search" method="get" target="blank">	    
+				    <input size="12" name="q" class="mkblkinput" /><br />
+				    <input type="hidden" name="hl" />
+				    <input type="submit" name="btnG" value="Buscar" class="mkbutton" />
+				    </form>
+				  </td>
+				</tr>
+
+	         	      </table>
+	  		    </td>
+			  </tr>
+			</table>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td class="tdspacer">&nbsp;</td>
+		    </tr>
+
+<!-- end block template -->
+  
+<!-- begin block template -->
+
+		    <tr>
+		      <td class="tablemenu" valign="top">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0">
+   			  <tr>
+         		    <td>
+          		      <table border="0" cellpadding="4" cellspacing="0" width="100%">
+          			<tr>
+				  <td width="100%" class="sottotitolo" valign="middle" nowrap="nowrap">Enlaces</td>
+         			</tr>
+         		      </table>
+         		    </td>
+			  </tr>
+			  <tr>
+         		    <td width="100%">
+		 	      <table border="0" width="100%" cellpadding="0" cellspacing="1">
+		 	      <tr><td class="blocks"><p><a href="/phpBB3/viewtopic.php?p=60#60"><font size="1">Páginas de IBM</font></a><br /><a href="/phpBB3/viewtopic.php?p=75#75"><font size="1">Sitios de interes</font></a><br /><br /><a href="/phpBB3/viewtopic.php?p=63#63"><font size="1">Boletines</font></a><br /><font size="1"><em><a href="/phpBB3/viewtopic.php?p=152#152">Acerca de este sitio</a></em></font></p></td></tr>
+	         	      </table>
+	  		    </td>
+			  </tr>
+			</table>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td class="tdspacer">&nbsp;</td>
+		    </tr>
+
+<!-- end block template -->
+  
+<!-- begin block template -->
+
+		    <tr>
+		      <td class="tablemenu" valign="top">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0">
+   			  <tr>
+         		    <td>
+          		      <table border="0" cellpadding="4" cellspacing="0" width="100%">
+          			<tr>
+				  <td width="100%" class="sottotitolo" valign="middle" nowrap="nowrap">Encuesta</td>
+         			</tr>
+         		      </table>
+         		    </td>
+			  </tr>
+			  <tr>
+         		    <td width="100%">
+		 	      <table border="0" width="100%" cellpadding="0" cellspacing="1">
+		 	      
+				<tr>
+				  <td class="tdblock">
+				  <a href="../phpBB3/viewtopic.php?t=272&amp;view=viewpoll">Cual cree Ud. que es la solución a la edad promedia muy alta (50 años) de la gente de mainframe.</a>
+				  </td>
+				</tr>
+            
+				<tr>
+				  <td class="tdblock3">
+				  Cambiar el mainframe por UNIX/Linux/Windows.
+				  </td>
+				</tr>
+				<tr>
+				  <td align="left">
+					<div align="left" style="width: 130px; background-color: #FFFDEF; border: solid 1px;">
+				  		<img src="../mkportal/templates/Forum/images/bar-start.gif" width="4" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar.gif" width="1" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar-end.gif" width="4" height="11" alt="" />
+					</div>
+		  		</td>
+				</tr>
+
+                
+				<tr>
+				  <td class="tdblock3">
+				  Proveer herramientas gráficas (bajo windows) para realizar el trabajo.
+				  </td>
+				</tr>
+				<tr>
+				  <td align="left">
+					<div align="left" style="width: 130px; background-color: #FFFDEF; border: solid 1px;">
+				  		<img src="../mkportal/templates/Forum/images/bar-start.gif" width="4" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar.gif" width="7" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar-end.gif" width="4" height="11" alt="" />
+					</div>
+		  		</td>
+				</tr>
+
+                
+				<tr>
+				  <td class="tdblock3">
+				  Entrenar en la empresa gente mas joven que continue la tarea como hoy (Pantalla verde).
+				  </td>
+				</tr>
+				<tr>
+				  <td align="left">
+					<div align="left" style="width: 130px; background-color: #FFFDEF; border: solid 1px;">
+				  		<img src="../mkportal/templates/Forum/images/bar-start.gif" width="4" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar.gif" width="47" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar-end.gif" width="4" height="11" alt="" />
+					</div>
+		  		</td>
+				</tr>
+
+                
+				<tr>
+				  <td class="tdblock3">
+				  Volver a enseñar en las universidades el mainframe (como se hacia muchos años atras).
+				  </td>
+				</tr>
+				<tr>
+				  <td align="left">
+					<div align="left" style="width: 130px; background-color: #FFFDEF; border: solid 1px;">
+				  		<img src="../mkportal/templates/Forum/images/bar-start.gif" width="4" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar.gif" width="62" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar-end.gif" width="4" height="11" alt="" />
+					</div>
+		  		</td>
+				</tr>
+
+                
+				<tr>
+				  <td class="tdblock3">
+				  Otra
+				  </td>
+				</tr>
+				<tr>
+				  <td align="left">
+					<div align="left" style="width: 130px; background-color: #FFFDEF; border: solid 1px;">
+				  		<img src="../mkportal/templates/Forum/images/bar-start.gif" width="4" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar.gif" width="2" height="11" alt="" /><img src="../mkportal/templates/Forum/images/bar-end.gif" width="4" height="11" alt="" />
+					</div>
+		  		</td>
+				</tr>
+
+                
+				<tr>
+				  <td class="tdblock">
+				  <span class="mktxtcontr">419</span> Votos Totales
+				  </td>
+				</tr>
+				<tr>
+				  <td class="tdglobal">
+				  <a href="../phpBB3/viewtopic.php?t=272&amp;view=viewpoll">Mirar encuesta...</a>
+				  </td>
+				</tr>
+            
+	         	      </table>
+	  		    </td>
+			  </tr>
+			</table>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td class="tdspacer">&nbsp;</td>
+		    </tr>
+
+<!-- end block template -->
+  
+		  </table>
+		</div>
+		<div id="menucloseds" style="display:none">
+		<div class="mkalign2"><a href="javascript:ColumnOpen('menusx');MemoPos('MKmenusx', '0');"><img src="../mkportal/templates/Forum/images/f1.gif" border="0"  alt="" /></a></div>
+		</div>
+		</td>
+
+<!-- end left column -->
+
+<!-- begin column spacer -->
+
+		<td class="vspacer" width="0%">&nbsp;</td>
+
+<!-- end column spacer -->
+
+<!-- begin center column -->
+
+		<td valign="top" class="mkalign1" width="100%">
+		  <table cellpadding="0" cellspacing="3" border="0" width="100%"> 
+		  <tr><td valign="top" class="mkalign1">
+
+
+
+<div id="wrap" style="padding: 0 5px;" >
+	<a id="top" name="top" accesskey="t"></a>
+	<div id="page-header">
+		<div class="headerbar">
+			<div class="inner"><span class="corners-top"><span></span></span>
+
+			<div id="site-description">
+				<a href="./index.php" title="Índice general" id="logo"><img src="./styles/prosilver/imageset/site_logo.gif" width="139" height="52" alt="" title="" /></a>
+				<h1>DinoLand - Foros informáticos en español</h1>
+				<p>Area para los &quot;compu&quot; sapiens que desean aprender y ayudar a otros.</p>
+				<p class="skiplink"><a href="#start_here">Obviar</a></p>
+			</div>
+
+		
+			<div id="search-box">
+				<form action="./search.php" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="text" maxlength="128" title="Buscar palabras clave" class="inputbox search" value="Buscar…" onclick="if(this.value=='Buscar…')this.value='';" onblur="if(this.value=='')this.value='Buscar…';" />
+					<input class="button2" value="Buscar" type="submit" /><br />
+					<a href="./search.php" title="Ver opciones de búsqueda avanzada">Búsqueda avanzada</a> 
+				</fieldset>
+				</form>
+			</div>
+		
+
+			<span class="corners-bottom"><span></span></span></div>
+		</div>
+
+		<div class="navbar">
+			<div class="inner"><span class="corners-top"><span></span></span>
+
+			<ul class="linklist navlinks">
+				<li class="icon-home"><a href="./index.php" accesskey="h">Índice general</a>  <strong>&#8249;</strong> <a href="./viewforum.php?f=57">Hardware</a> <strong>&#8249;</strong> <a href="./viewforum.php?f=38">Hercules</a></li>
+
+				<li class="rightside"><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" class="fontsize" title="Cambiar tamaño de la fuente">Cambiar tamaño de la fuente</a></li>
+
+				<li class="rightside"><a href="./viewtopic.php?f=38&amp;t=639&amp;view=print" title="Imprimir vista" accesskey="p" class="print">Imprimir vista</a></li>
+			</ul>
+
+			
+
+			<ul class="linklist rightside">
+				<li class="icon-faq"><a href="./faq.php" title="Preguntas Frecuentes">FAQ</a></li>
+				<li class="icon-register"><a href="./ucp.php?mode=register">Registrarte</a></li>
+					<li class="icon-logout"><a href="./ucp.php?mode=login" title="Identificarte" accesskey="x">Identificarte</a></li>
+				
+			</ul>
+
+			<span class="corners-bottom"><span></span></span></div>
+		</div>
+
+	</div>
+
+	<a name="start_here"></a>
+	<div id="page-body">
+		
+<h2><a href="./viewtopic.php?f=38&amp;t=639">Clonar usuarios</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body --><div style="display: none !important;">Todo lo relacionado con simuladores de HW para otras plataformas. Hercules y ... <br /></div>
+
+<div class="topic-actions">
+
+	<div class="buttons">
+	
+		<div class="reply-icon"><a href="./posting.php?mode=reply&amp;f=38&amp;t=639" title="Publicar una respuesta"><span></span>Publicar una respuesta</a></div>
+	
+	</div>
+
+	
+		<div class="search-box">
+			<form method="get" id="topic-search" action="./search.php">
+			<fieldset>
+				<input class="inputbox search tiny"  type="text" name="keywords" id="search_keywords" size="20" value="Buscar este tema…" onclick="if(this.value=='Buscar este tema…')this.value='';" onblur="if(this.value=='')this.value='Buscar este tema…';" />
+				<input class="button2" type="submit" value="Buscar" />
+				<input type="hidden" name="t" value="639" />
+<input type="hidden" name="sf" value="msgonly" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+		<div class="pagination">
+			3 mensajes
+			 &bull; Página <strong>1</strong> de <strong>1</strong>
+		</div>
+	
+
+</div>
+<div class="clear"></div>
+
+
+	<div id="p2347" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 class="first"><a href="#p2347">Clonar usuarios</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=2347#p2347"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Nota" title="Nota" /></a>por <strong><a href="./memberlist.php?mode=viewprofile&amp;u=971">aonjor</a></strong> &raquo; 23 Feb 2007, 09:30 </p>
+
+			
+
+			<div class="content">Estoy utilizando el hercules para aprender, no pretendo una aplicacion completa pero lo estoy utilizando para probar instalar y aprender todo sobre un Mainframe yo trabajo desde hace 5 años con el y todas mis pruebas los hago en este sistema, soy instructor de cobol-cics-db2, no es facil pero tampoco imposible. 
+<br />El motivo de la consulta radica en que necesito definir usuarios similares, (dentro del mismo sistema)  a los que tengo en la instalacion, y no encontre documentacion sobre como realizarlo. Es posible clonar un usuario existente,( Duplicacion exacta cambiando en userid).</div>
+
+			<div id="sig2347" class="signature">Jorge Elias Aon
+<br />SOFTWARE SOLUTIONS
+<br /> 10 NROº 2171 E/510 Y 511
+<br />(1901) RINGUELET
+<br />BUENOS AIRES</div>
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile2347">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=971">aonjor</a>
+			</dt>
+
+			<dd>Usuario<br /><img src="./images/ranks/dino01.jpg" alt="Usuario" title="Usuario" /></dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Mensajes:</strong> 5</dd><dd><strong>Registrado:</strong> 12 Feb 2007, 11:53</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Arriba">Arriba</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p2368" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p2368"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=2368#p2368"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Nota" title="Nota" /></a>por <strong><a href="./memberlist.php?mode=viewprofile&amp;u=419">romero_joseant</a></strong> &raquo; 26 Feb 2007, 07:42 </p>
+
+			
+
+			<div class="content">Yo para crear un usuario lo hago a través de comandos desde un job. Sus autorizaciones para los datasets, grupo al que pertenece, permiso para TSO, CICS, etc...
+<br />Cambia lo que necesites (o solo el USERID) y lanzalo de nuevo.
+<br />
+<br />Así seguro que no tendrás problemas</div>
+
+			<div id="sig2368" class="signature">-----------
+<br />Saludos</div>
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile2368">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=419">romero_joseant</a>
+			</dt>
+
+			<dd>Usuario<br /><img src="./images/ranks/dino01.jpg" alt="Usuario" title="Usuario" /></dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Mensajes:</strong> 10</dd><dd><strong>Registrado:</strong> 18 Ene 2006, 07:10</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Arriba">Arriba</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p2377" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p2377"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=2377#p2377"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Nota" title="Nota" /></a>por <strong><a href="./memberlist.php?mode=viewprofile&amp;u=489">student</a></strong> &raquo; 26 Feb 2007, 13:32 </p>
+
+			
+
+			<div class="content">Buen  día ,  si  ya cuentas  con  un   usuario   del  cual  requieres  copiar  sus atributo s  yo  usaria  la  utileria   irrut100...
+<br />//PATITOA JOB (8500118,792901),'SMFMEXICO',CLASS=A,      
+<br />//             MSGLEVEL=(1,1),MSGCLASS=X,                                          
+<br />//             NOTIFY=PATITOA                                           
+<br />//************************************************************
+<br />//*OBTIENE CROSS-REFERENCE DE UN USUARIO O  GRUPO
+<br />//************************************************************
+<br />//STEP1   EXEC   PGM=IRRUT100                                           
+<br />//SYSPRINT  DD SYSOUT=*                                                 
+<br />//SYSUT1    DD UNIT=TEMPDA,SPACE=(TRK,(100,50))                         
+<br />//SYSIN     DD DATA,DLM=$$                                              
+<br /> BENITO                                                    
+<br />
+<br />el    cual  me permitira  obtener   todos   los  accesos   sobre   grupos   y  recursos   del  sistema   con  los q cuente  BENITO.
+<br />despues  de  esto   armaria  un  job  parecido  al   siguiente   para   definir los   usuarios  en  forma bach  en  el  cual  deberas   indicar    los  atributos del  usuario,  accesos a  cics,   tso   archivos  planos, definir  su  alias  en  el  catalogo  maestro  etc..
+<br />Y  usaras  algunas  utilerías  que  son  el   IDCAMS  y  el  IKJEFT01.  que  te  perfmitiran  la   ejecución  de  los  comandos..
+<br />
+<br />te  envio  un ejemplo:
+<br />
+<br />//PATITOA  JOB 101010,'LISTA USUARIO',
+<br />//             NOTIFY=PATITOA,CLASS=A, 
+<br />//             MSGLEVEL=(1,1)           
+<br />//TSO      EXEC PGM=IKJEFT01,DYNAMNBR=35,REGION=2000K 
+<br />//SYSTSPRT DD SYSOUT=*,                            
+<br />//        DCB=(RECFM=VBA,LRECL=255,BLKSIZE=259)     
+<br />//SYSTSIN  DD *                                        
+<br />  AU BENITO2 NAME('BENITO FLORES 2    ') OWNER(CICS)  +
+<br />  DFLTGRP(CICS) PASSWORD(SERASERA)                    +      
+<br />  DATA('ANALISTA  DE PRUEBAS') -  
+<br />   TSO(ACCTNUM(101010) HOLDCLASS(H) JOBCLASS(A) MSGCLASS(H) -
+<br /> PROC(DESARRO) SIZE(4096)  MAXSIZE(4096)  -
+<br /> SYSOUTCLASS(H) UNIT(ISPDA)) 
+<br />  AD 'BENITO2*' OWNER(BENITO2) UACC(NONE)              
+<br />  PE 'XAL.ARCHIV.*' ID(Z038035) ACC(ALT)               
+<br />  PE  $ss  CLASS($CHGMAN)  G  ID(BENITO2)  ACC(U)      
+<br />  CO  BENITO2   GROUP(cics      )     OWN(cics         )
+<br />  CO  BENITO2   GROUP(XALIDA    )     OWN(XALIDA       )
+<br />  CO  BENITO2   GROUP(SDSFGRD0  )     OWN(SDSFGRD0     )
+<br />   SETR RACLIST(TSOPROC) REF                         
+<br />   SETR RACLIST($CHGMAN) REF                           
+<br />   SETR  GENERIC(*)REF                                   
+<br />   SETR  GLOBAL(*)REF                                    
+<br />//ALIAS    EXEC PGM=IDCAMS                               
+<br />//SYSPRINT DD SYSOUT=*                                   
+<br />//SYSPRINT DD SYSOUT=*                                   
+<br />//SYSIN    DD *                                          
+<br />   DEFINE ALIAS(NAME(benito2) RELATE(UCAT.DESA.TSO))     
+<br />
+<br />los  comandos  de  este  ultimo  job     tendran  variación  de acuerdo  a la   forma    y  tipo  de  proteccion  que  manejes  en  tu  sistema.. espero  y  te   sirva   de  algo..  y  si  no  entendi  bien tu  pregunta  porfavor   comentamelo    para   ampliar  la  explicación    o  cambiarla  radicalmente..
+<br />
+<br />Seguramente al  momento  de  q  envie    el  mensaje  se moveran   los  parametros  de  la  tarjeta  de  entrada  del  jcl..si  es  asi   si  gustas  te lo  puedo  enviar por  correo..
+<br />
+<br />Saludos.   y  buen  día.. <img src="./images/smilies/icon_idea.gif" alt=":idea:" title="Idea" /></div>
+
+			<div id="sig2377" class="signature">JALV</div>
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile2377">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=489">student</a>
+			</dt>
+
+			<dd>Usuario<br /><img src="./images/ranks/dino01.jpg" alt="Usuario" title="Usuario" /></dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Mensajes:</strong> 24</dd><dd><strong>Registrado:</strong> 07 Abr 2006, 14:19</dd>
+			<dd><strong>País:</strong> México</dd>
+		
+			<dd><strong>Ciudad:</strong> Querétro</dd>
+		
+			<dd><strong>Ocupación:</strong> Otra</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Arriba">Arriba</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<form id="viewtopic" method="post" action="./viewtopic.php?f=38&amp;t=639">
+
+	<fieldset class="display-options" style="margin-top: 0; ">
+		
+		<label>Mostrar mensajes previos: <select name="st" id="st"><option value="0" selected="selected">Todos los mensajes</option><option value="1">1 día</option><option value="7">7 días</option><option value="14">2 semanas</option><option value="30">1 mes</option><option value="90">3 meses</option><option value="180">6 meses</option><option value="365">1 año</option></select></label>
+		<label>Ordenar por <select name="sk" id="sk"><option value="a">Autor</option><option value="t" selected="selected">Fecha publicación</option><option value="s">Asunto</option></select></label> <label><select name="sd" id="sd"><option value="a" selected="selected">Ascendente</option><option value="d">Descendente</option></select> <input type="submit" name="sort" value="Ir" class="button2" /></label>
+		
+	</fieldset>
+
+	</form>
+	<hr />
+
+
+<div class="topic-actions">
+	<div class="buttons">
+	
+		<div class="reply-icon"><a href="./posting.php?mode=reply&amp;f=38&amp;t=639" title="Publicar una respuesta"><span></span>Publicar una respuesta</a></div>
+	
+	</div>
+
+	
+		<div class="pagination">
+			3 mensajes
+			 &bull; Página <strong>1</strong> de <strong>1</strong>
+		</div>
+	
+</div>
+
+
+	<p></p><p><a href="./viewforum.php?f=38" class="left-box left" accesskey="r">Volver a Hercules</a></p>
+
+	<form method="post" id="jumpbox" action="./viewforum.php" onsubmit="if(this.f.value == -1){return false;}">
+
+	
+		<fieldset class="jumpbox">
+	
+			<label for="f" accesskey="j">Saltar a:</label>
+			<select name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+			
+				<option value="-1">Seleccioná un Foro</option>
+			<option value="-1">------------------</option>
+				<option value="51">General</option>
+			
+				<option value="11">&nbsp; &nbsp;Leer antes de registrarse</option>
+			
+				<option value="36">&nbsp; &nbsp;Recomendaciones para postear un mensaje</option>
+			
+				<option value="52">MVS - OS/390 - z/OS</option>
+			
+				<option value="1">&nbsp; &nbsp;Sistema operativo</option>
+			
+				<option value="2">&nbsp; &nbsp;Comunicaciones</option>
+			
+				<option value="3">&nbsp; &nbsp;CICS Transaction server</option>
+			
+				<option value="4">&nbsp; &nbsp;DB2 y otras bases de datos</option>
+			
+				<option value="37">&nbsp; &nbsp;IMS</option>
+			
+				<option value="9">&nbsp; &nbsp;REXX</option>
+			
+				<option value="17">&nbsp; &nbsp;JCL</option>
+			
+				<option value="13">&nbsp; &nbsp;Cobol</option>
+			
+				<option value="10">&nbsp; &nbsp;Almacenamiento  SMS RMM</option>
+			
+				<option value="12">&nbsp; &nbsp;Seguridad Racf</option>
+			
+				<option value="16">&nbsp; &nbsp;MQ-Series</option>
+			
+				<option value="22">&nbsp; &nbsp;Assembler</option>
+			
+				<option value="23">&nbsp; &nbsp;TSO ISPF</option>
+			
+				<option value="24">&nbsp; &nbsp;Websphere</option>
+			
+				<option value="25">&nbsp; &nbsp;Java</option>
+			
+				<option value="32">&nbsp; &nbsp;Tivoli</option>
+			
+				<option value="34">&nbsp; &nbsp;Schedulers</option>
+			
+				<option value="40">&nbsp; &nbsp;Automatización</option>
+			
+				<option value="47">&nbsp; &nbsp;Control de versiones</option>
+			
+				<option value="64">&nbsp; &nbsp;Otros lenguajes de programación</option>
+			
+				<option value="53">z/VM - Linux for z/Server - VSE</option>
+			
+				<option value="5">&nbsp; &nbsp;Manejo del VM</option>
+			
+				<option value="6">&nbsp; &nbsp;Linux</option>
+			
+				<option value="31">&nbsp; &nbsp;VSE</option>
+			
+				<option value="54">Bolsa de trabajo</option>
+			
+				<option value="18">&nbsp; &nbsp;Pedidos</option>
+			
+				<option value="19">&nbsp; &nbsp;Ofrecidos</option>
+			
+				<option value="41">&nbsp; &nbsp;Educación</option>
+			
+				<option value="55">Utilidades ...</option>
+			
+				<option value="42">&nbsp; &nbsp;... en REXX</option>
+			
+				<option value="43">&nbsp; &nbsp;... en HLASM</option>
+			
+				<option value="44">&nbsp; &nbsp;... en C o C++</option>
+			
+				<option value="57">Hardware</option>
+			
+				<option value="7">&nbsp; &nbsp;CPUs</option>
+			
+				<option value="8">&nbsp; &nbsp;Storage</option>
+			
+				<option value="38" selected="selected">&nbsp; &nbsp;Hercules</option>
+			
+				<option value="58">Experiencias</option>
+			
+				<option value="26">&nbsp; &nbsp;Migrando a ...</option>
+			
+				<option value="27">&nbsp; &nbsp;Cambiando de marca</option>
+			
+				<option value="39">&nbsp; &nbsp;Denuncias</option>
+			
+				<option value="59">Otros temas</option>
+			
+				<option value="14">&nbsp; &nbsp;Productos de software</option>
+			
+				<option value="15">&nbsp; &nbsp;Productos de hardware</option>
+			
+				<option value="30">&nbsp; &nbsp;Temas sin clasificación</option>
+			
+				<option value="35">&nbsp; &nbsp;Como hacer para ...</option>
+			
+				<option value="61">Otras Tecnologías</option>
+			
+				<option value="46">&nbsp; &nbsp;VMS</option>
+			
+				<option value="63">&nbsp; &nbsp;AS/400</option>
+			
+				<option value="62">Información util</option>
+			
+				<option value="20">&nbsp; &nbsp;Links</option>
+			
+				<option value="21">&nbsp; &nbsp;Boletines, whitepapers,etc</option>
+			
+				<option value="28">&nbsp; &nbsp;Novedades</option>
+			
+				<option value="29">&nbsp; &nbsp;Acerca de</option>
+			
+			</select>
+			<input type="submit" value="Ir" class="button2" />
+		</fieldset>
+	</form>
+
+</div>
+
+<div id="page-footer">
+
+	<div class="navbar">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<ul class="linklist">
+			<li class="icon-home"><a href="./index.php" accesskey="h">Índice general</a></li>
+				
+			<li class="rightside"><a href="./memberlist.php?mode=leaders">El Equipo</a> &bull; <a href="./ucp.php?mode=delete_cookies">Borrar todas las cookies del Sitio</a> &bull; Todos los horarios son UTC - 3 horas </li>
+		</ul>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<div class="copyright">Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group
+		<br />Traducción al Español Argentino por <a href="http://www.phpbbargentina.com/">phpBB Argentina</a> con la colaboración de <a href="http://www.phpbb-es.com/">phpbb-es.com</a>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" name="bottom" accesskey="z"></a>
+	
+</div>
+
+
+</td></tr>
+		  </table>
+		</td>
+
+<!-- end center column -->
+		
+<!-- begin close portal body -->
+
+	      </tr>
+	    </table>
+	  </td>
+	</tr>
+	
+<!-- end close portal body -->
+
+<!-- begin close main table -->
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+</div>
+
+<!-- end close main table -->
+
+<!-- begin footer -->
+<!-- you can add your credits here  -->
+
+<!-- end footer -->
+  <p align="center"><span class="mkcopyright" style="font-size: 10px"><a style="font-size: 10px" href="http://www.mkportal.it/" target="_blank">MKPortal</a> &copy;2003-2008 <a style="font-size: 10px" href="http://www.mkportal.it/" target="_blank">mkportal.it</a></span></p>
+
+</body>
+</html>
+
+<!-- end footer -->

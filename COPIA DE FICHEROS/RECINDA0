@@ -1,0 +1,10 @@
+//GSFSOFT  JOB (),MEMBER,                                               00020000
+//         CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID,                           00030000
+//         MSGLEVEL=(1,1),REGION=8M                                     00040000
+//RECVR    EXEC PGM=IKJEFT01                                            00050000
+//SYSTSPRT DD SYSOUT=*                                                  00060000
+//SYSPRINT DD SYSOUT=*                                                  00070000
+//SYSTSIN  DD *                                                         00080000
+RECEIVE INDA('FEK.IBM.HHOP900.JCL.BIN')                                 00140000
+RESTORE VOL(ZUSER2) DS('FEK.IBM.HHOP900.JCL') NEW                       00150000
+/*                                                                      00240000

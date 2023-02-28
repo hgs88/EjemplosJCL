@@ -1,0 +1,22 @@
+//GSFSOFT  JOB (),MEMBER,                                               00020000
+//         CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID,                           00030000
+//         MSGLEVEL=(1,1),REGION=8M                                     00040000
+//RECVR    EXEC PGM=IKJEFT01                                            00050000
+//SYSTSPRT DD SYSOUT=*                                                  00060000
+//SYSPRINT DD SYSOUT=*                                                  00070000
+//SYSTSIN  DD *                                                         00080000
+                                                                        00080105
+                                                                        00080205
+                                                                        00080305
+                                                                        00080405
+                                                                        00080505
+RECEIVE INDA('HLQ.IBM.HAKG900.F1.BIN')                                  00110004
+RESTORE VOL(ZUSER1) DS('HLQ.IBM.HAKG900.F1') NEW                        00120004
+RECEIVE INDA('HLQ.IBM.HAKG900.F2.BIN')                                  00130004
+RESTORE VOL(ZUSER1) DS('HLQ.IBM.HAKG900.F2') NEW                        00140004
+RECEIVE INDA('HLQ.IBM.HAKG900.F3.BIN')                                  00150004
+RESTORE VOL(ZUSER1) DS('HLQ.IBM.HAKG900.F3') NEW                        00160004
+RECEIVE INDA('HLQ.IBM.HAKG900.F4.BIN')                                  00170004
+RESTORE VOL(ZUSER1) DS('HLQ.IBM.HAKG900.F4') NEW                        00180004
+RECEIVE INDA('HLQ.IBM.HAKG900.F5.BIN')                                  00190004
+RESTORE VOL(ZUSER1) DS('HLQ.IBM.HAKG900.F5') NEW                        00200004

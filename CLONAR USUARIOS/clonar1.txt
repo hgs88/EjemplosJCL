@@ -1,0 +1,13 @@
+//PATITOA JOB (8500118,792901),'SMFMEXICO',CLASS=A, 
+// MSGLEVEL=(1,1),MSGCLASS=X, 
+// NOTIFY=PATITOA 
+//************************************************************ 
+//*OBTIENE CROSS-REFERENCE DE UN USUARIO O GRUPO 
+//************************************************************ 
+//STEP1 EXEC PGM=IRRUT100 
+//SYSPRINT DD SYSOUT=* 
+//SYSUT1 DD UNIT=TEMPDA,SPACE=(TRK,(100,50)) 
+//SYSIN DD DATA,DLM=$$ 
+BENITO 
+/*
+//

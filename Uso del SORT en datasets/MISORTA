@@ -1,0 +1,63 @@
+//RALEYSRT   JOB (20,FB3),TRALEY,COND=(0,NE),
+//            CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID,REGION=5M
+//*
+//* USE SORT
+//*
+//ST3      EXEC PGM=SORT
+//SYSOUT   DD SYSOUT=*
+//SORTIN   DD DSN=VERDURA.VENTAS,DISP=SHR
+//*FBOUT    DD DSN=USER05.LIB.DNI0,DISP=SHR
+//SORTOUT  DD SYSOUT=*
+//*SORTOUT  DD DSN=USER05.SALIDA,
+//*            VOL=SER=ZUSER1,UNIT=3390,
+//*            DISP=(NEW,KEEP),SPACE=(TRK,(1,1),RLSE),
+//*            DCB=(RECFM=FB,LRECL=80,BLKSIZE=8000)
+//SYSIN DD *
+  OPTION COPY
+  OUTFIL FNAMES=SYSOUT,
+   INCLUDE=(7,4,CH,EQ,C'0001',AND,15,4,CH,GT,C'2000'),
+   HEADER1=(5:'REPORTE VENTAS',2/,
+           5:'PRINTED ON ',DATE,
+           ' AT ',TIME=(12:),3/,
+           5:'C-VENTAS',20:'C-VENDE',35:'FECHA',52:'RESTO',/,
+           5:'------',20:'-----',35:'----------',52:'--------'),
+   OUTREC=(5:1,6,20:7,4,35:15,8,DATE1(/)+90,52:23,6,120:X)
+
+/*
+//
+  OUTREC FIELDS=(1,14,C',',15,4,C',',19,9)
+  ***********************************************
+  BUSQUEDA POR PRODUCTOS Y POR FECHA
+  ***********************************************
+  INCLUDE COND=(7,4,CH,EQ,C'0001',AND,15,4,CH,EQ,C'2000')
+  OUTREC FIELDS=(1,6,C',',7,4,C',',15,4,C',',19,9)
+  ************************************************
+  BUSQUEDA POR PRODUCTOS Y POR A#O Y MES
+  ************************************************
+  OPTION COPY
+  INCLUDE COND=(7,4,CH,EQ,C'0001',AND,15,4,CH,GT,C'2000',AND,19,2,
+  CH,EQ,C'03')
+  OUTREC FIELDS=(1,6,C',',7,4,C',',15,4,C',',19,2,C',',21,8)
+  ****************************************************
+  EJEMPLO BUSQUEDA CON IMPRESION DE CABECERAS
+  ****************************************************
+  OPTION COPY
+  OUTFIL FNAMES=SYSOUT,
+   INCLUDE=(7,4,CH,EQ,C'0001',AND,15,4,CH,GT,C'2000'),
+   HEADER1=(5:'REPORTE VENTAS',2/,
+           5:'PRINTED ON ',DATE,
+           5:'C-VENTAS',20:'C-VENDE',35:'A#O ',40:'MES',52:'RESTO',/,
+           5:'------',20:'-----',35:'-----',40:'-----',52:'--------'),
+   OUTREC=(5:1,6,20:7,4,35:15,4,40:19,2,52:21,8,120:X)
+   *************************************************************
+   EJEMPLO BUSQUEDA CON IMPRESION DE CABECERAS CON MASCARA FECHA
+   *************************************************************
+   OPTION COPY
+   OUTFIL FNAMES=SYSOUT,
+    INCLUDE=(7,4,CH,EQ,C'0001',AND,15,4,CH,GT,C'2000'),
+    HEADER1=(5:'REPORTE VENTAS',2/,
+            5:'PRINTED ON ',DATE,
+            ' AT ',TIME=(12:),3/,
+            5:'C-VENTAS',20:'C-VENDE',35:'FECHA',52:'RESTO',/,
+            5:'------',20:'-----',35:'----------',52:'--------'),
+    OUTREC=(5:1,6,20:7,4,35:15,8,ZD,M9,LENGTH=8,52:23,6,120:X)

@@ -1,0 +1,138 @@
+//RACF33     JOB (20,FB3),TRALEY,COND=(0,NE),
+//            CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID
+//*
+//*        CLEANUP
+//*
+//SUBSET    EXEC PGM=IEFBR14
+//SORTOF1   DD   DSN=USER02.REG200,DISP=(MOD,DELETE),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF2   DD   DSN=USER02.REG220,DISP=(MOD,DELETE),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF3   DD   DSN=USER02.REG270,DISP=(MOD,DELETE),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF4   DD   DSN=USER02.REG102,DISP=(MOD,DELETE),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF5   DD   DSN=USER02.REG404,DISP=(MOD,DELETE),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF6   DD   DSN=USER02.REG505,DISP=(MOD,DELETE),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//*
+//*        FILTRA REGISTROS
+//*
+//SEPARA    EXEC PGM=SORT
+//SYSOUT    DD   SYSOUT=*
+//SORTIN    DD   DSN=USER02.RACF.UNLOAD,DISP=SHR
+//SORTOF1   DD   DSN=USER02.REG200,DISP=(,CATLG),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF2   DD   DSN=USER02.REG220,DISP=(,CATLG),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF3   DD   DSN=USER02.REG270,DISP=(,CATLG),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF4   DD   DSN=USER02.REG102,DISP=(,CATLG),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF5   DD   DSN=USER02.REG404,DISP=(,CATLG),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SORTOF6   DD   DSN=USER02.REG505,DISP=(,CATLG),
+//          UNIT=(3390),SPACE=(CYL,(1,10),RLSE)
+//SYSIN     DD   *
+  OPTION COPY,VLSHRT,SPANINC=RC0
+  OUTFIL INCLUDE=(005,4,CH,EQ,C'0200',AND,
+                  010,8,CH,EQ,C'ADCDMST'),FILES=1,
+                  CONVERT,OUTREC=(5,300),VLFILL=C' '
+  OUTFIL INCLUDE=(005,4,CH,EQ,C'0220',AND,
+                  010,8,CH,EQ,C'ADCDMST'),FILES=2,
+                  CONVERT,OUTREC=(5,300),VLFILL=C' '
+  OUTFIL INCLUDE=(005,4,CH,EQ,C'0270',AND,
+                  010,8,CH,EQ,C'ADCDMST'),FILES=3,
+                  CONVERT,OUTREC=(5,1100),VLFILL=C' '
+  OUTFIL INCLUDE=(005,4,CH,EQ,C'0102',AND,
+                  019,8,CH,EQ,C'ADCDMST'),FILES=4,
+                  CONVERT,OUTREC=(5,300),VLFILL=C' '
+  OUTFIL INCLUDE=(005,4,CH,EQ,C'0404',AND,
+                  062,8,CH,EQ,C'ADCDMST'),FILES=5,
+                  CONVERT,OUTREC=(5,300),VLFILL=C' '
+  OUTFIL INCLUDE=(005,4,CH,EQ,C'0505',AND,
+                  266,8,CH,EQ,C'ADCDMST'),FILES=6,
+                  CONVERT,OUTREC=(5,300),VLFILL=C' '
+/*
+//*
+//ADDUSER  EXEC PGM=SORT
+//SYSOUT    DD SYSOUT=*
+//SORTIN    DD DSN=USER02.REG200,DISP=SHR
+//SORTOUT   DD SYSOUT=*
+//SYSIN     DD  *
+  SORT    FIELDS=COPY
+  OUTFIL  OUTREC=(C' ADDUSER ',
+                  06,8,C' OWNER(',26,8,C') DFLTGRP(',096,8,C')   + ',
+                  /,
+                  C'         PASSWORD(',06,8,C') ',
+                  C'NAME(''',75,20,C''')')
+  END
+/*
+//ALTUTSO  EXEC PGM=SORT
+//SYSOUT    DD SYSOUT=*
+//SORTIN    DD DSN=USER02.REG220,DISP=SHR
+//SORTOUT   DD SYSOUT=*
+//SYSIN     DD  *
+  SORT    FIELDS=COPY
+  OUTFIL  OUTREC=(C' ALTUSER ',
+                  06,8,C' TSO(PROC(',150,8,C')) ',
+                  C' ACCTNUM(',15,8,C') + ',
+                  /,
+                  C'         SIZE(',159,8,C') ',
+                  C' MAXSIZE(',172,10,C') ',
+                  C' UNIT(',205,8,C') )')
+  END
+/*
+//ALTUOMVS EXEC PGM=SORT
+//SYSOUT    DD SYSOUT=*
+//SORTIN    DD DSN=USER02.REG270,DISP=SHR
+//SORTOUT   DD SYSOUT=*
+//SYSIN     DD  *
+  SORT    FIELDS=COPY
+  OUTREC  FIELDS=(C' ALTUSER ',
+                  06,8,C' OMVS(UID(',15,10,C') ',
+                  C' HOME(',26,10,C') ',
+                  C' PROGRAM(',1050,8,C') )')
+  END
+/*
+//CONNECT  EXEC PGM=SORT
+//SYSOUT    DD SYSOUT=*
+//SORTIN    DD DSN=USER02.REG102,DISP=SHR
+//SORTOUT   DD SYSOUT=*
+//SYSIN     DD  *
+  SORT    FIELDS=COPY
+  OUTREC  FIELDS=(C' CONNECT ',
+                  15,8,C'GROUP(',06,8,C') ',
+                  C'OWNER(',06,8,C') ',
+                  C'AUTHORITY(',24,8,C') ')
+  END
+/*
+//PERMIT    EXEC PGM=SORT
+//SYSOUT    DD SYSOUT=*
+//SORTIN    DD DSN=USER02.REG404,DISP=SHR
+//SORTOUT   DD SYSOUT=*
+//SYSIN     DD  *
+  SORT    FIELDS=COPY
+  OUTFIL  OUTREC=(C' PERMIT ',
+                  C' ',6,44,C'       GEN + ',
+                  /,
+                  C'         CLASS(DATASET ) ',
+                  C'ID(',58,8,C') ',
+                  C'ACCESS(',67,8,C') ')
+  END
+/*
+//PERMIT    EXEC PGM=SORT
+//SYSOUT    DD SYSOUT=*
+//SORTIN    DD DSN=USER02.REG505,DISP=SHR
+//SORTOUT   DD SYSOUT=*
+//SYSIN     DD  *
+  SORT    FIELDS=COPY
+  OUTFIL  OUTREC=(C' PERMIT ',
+                  C' ',6,44,C'       + ',
+                  /,
+                  C'         CLASS(',253,8,C') ',
+                  C'ID(',262,8,C') ',
+                  C'ACCESS(',271,8,C') ')
+  END
+/*

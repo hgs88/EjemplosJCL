@@ -1,0 +1,98 @@
+//DEFHISVE JOB ,
+// MSGCLASS=H,MSGLEVEL=(1,1),TIME=(,4),REGION=70M,
+// USER=&SYSUID,NOTIFY=&SYSUID
+//******************************
+//* BORRA FICHERO VENTAS
+//******************************
+//DELETE EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=A
+//SYSIN DD *
+ DELETE VERDURA.FHVE
+/*
+//* DEFINE KSDS
+//**************************************************************
+//DEFINE EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=A
+//SYSIN DD *
+  DEFINE CLUSTER (NAME(VERDURA.FHVE) -
+  INDEXED -
+  RECORDS(1 150) -
+  LOG(NONE) -
+  KEYS(6 0) -
+  VOLUMES(ZUSER1) -
+  SHR(2 3) -
+  RECORDSIZE(150 150))
+/*
+//REPRO EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=*
+//SYSIN DD *
+  REPRO INDATASET(VERDURA.FHVE.SEQ1) -
+  OUTDATASET(VERDURA.FHVE)
+/*
+//**************************************************************
+//**************************************************************
+//* DEFINE CLAVE ALTERNATIVA COD VENDEDOR
+//**************************************************************
+//VENDEDOR EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=*
+//SYSIN DD *
+ DEFINE AIX -
+   (NAME(VERDURA.FHVE.VENDEDOR) -
+    RECORDS(1 150) -
+    KEYS(4 10) -
+    NONUNIQUEKEY -
+    VOLUME(ZUSER1) -
+    SHR(2 3) -
+    RELATE(VERDURA.FHVE)) -
+    DATA -
+    (NAME(VERDURA.FHVE.VENDEDOR.DATA)) -
+    INDEX -
+    (NAME(VERDURA.FHVE.VENDEDOR.INDICE))
+ DEFINE PATH -
+    (NAME(VERDURA.FHVE.VENDEDOR.PATH) -
+    PATHENTRY(VERDURA.FHVE.VENDEDOR))
+/*
+//**************************************************************
+//* DEFINE CLAVE ALTERNATIVA COD PRODUCTO
+//**************************************************************
+//PRODUC   EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=*
+//SYSIN DD *
+ DEFINE AIX -
+   (NAME(VERDURA.FHVE.PRODUC) -
+    RECORDS(1 150) -
+    KEYS(4 14) -
+    NONUNIQUEKEY -
+    VOLUME(ZUSER1) -
+    SHR(2 3) -
+    RELATE(VERDURA.FHVE)) -
+    DATA -
+    (NAME(VERDURA.FHVE.PRODUC.DATA)) -
+    INDEX -
+    (NAME(VERDURA.FHVE.PRODUC.INDICE))
+ DEFINE PATH -
+    (NAME(VERDURA.FHVE.PRODUC.PATH) -
+    PATHENTRY(VERDURA.FHVE.PRODUC))
+/*
+//**************************************************************
+//* DEFINE CLAVE ALTERNATIVA FECHA VENTA
+//**************************************************************
+//FECVEN   EXEC PGM=IDCAMS
+//SYSPRINT DD SYSOUT=*
+//SYSIN DD *
+ DEFINE AIX -
+   (NAME(VERDURA.FHVE.FECVEN) -
+    RECORDS(1 150) -
+    KEYS(4 6) -
+    NONUNIQUEKEY -
+    VOLUME(ZUSER1) -
+    SHR(2 3) -
+    RELATE(VERDURA.FHVE)) -
+    DATA -
+    (NAME(VERDURA.FHVE.FECVEN.DATA)) -
+    INDEX -
+    (NAME(VERDURA.FHVE.FECVEN.INDICE))
+ DEFINE PATH -
+    (NAME(VERDURA.FHVE.FECVEN.PATH) -
+    PATHENTRY(VERDURA.FHVE.FECVEN))
+/*

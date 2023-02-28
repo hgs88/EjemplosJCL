@@ -1,0 +1,21 @@
+//VCOMPIL JOB 1AD40G12,'COMPCOB-COMPLINK',NOTIFY=&SYSUID,
+//  MSGCLASS=Q,CLASS=A,MSGLEVEL=(1,1),REGION=0M,TIME=(0,7)
+//**************************************************************
+//* COMPILAR Y LINKEDITAR
+//**************************************************************
+//STEP0      EXEC IGYWCL,PARM.COBOL='LIB,APOST,XREF,MAP,OFFSET'
+//* -----------------------------------------------------------*
+//*         JCL PARA COMPILAR PGM DE COBOL (SIN DB2 Y SIN CICS)
+//* -----------------------------------------------------------*
+//* SYSLIB  ES LA LIB. DE COPYS
+//* SYSIN   ES LA LIB. DE PROGRAMAS FUENTES
+//* SYSLMOD ES LA LIB. DE PROGRAMAS OBJETOS O EJECUTABLES
+//* -----------------------------------------------------------*
+//COBOL.SYSLIB DD DISP=SHR,DSN=USER05.LIB.COPYS
+//             DD DISP=SHR,DSN=VERDURA.LIB.COBOL
+//COBOL.SYSIN  DD DISP=SHR,DSN=VERDURA.LIB.COBOL(RUTPRO)
+//LKED.SYSLMOD DD DISP=SHR,DSN=VERDURA.LIB.LOADLIB(RUTPRO)
+//LKED.SYSIN  DD *
+  NAME RUTPRO(R)
+/*
+//

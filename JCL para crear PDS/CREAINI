@@ -1,0 +1,12 @@
+//CREAINI JOB (20,FB3),TRALEY,                                          00010000
+//            CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID,COND=(0,NE)             00020000
+//ALLOC1 EXEC PGM=IEFBR14                                               00030000
+//FTPALLOC DD DSN=FEK.IBM.HHOP900.JCL.BIN,                              00040000
+// DISP=(NEW,CATLG,DELETE),                                             00050000
+// DSORG=PS,                                                            00060000
+// RECFM=FB,                                                            00070000
+// LRECL=80,                                                            00080000
+// BLKSIZE=0,                                                           00090000
+//  VOL=SER=ZUSER2,                                                     00100000
+// UNIT=3390,                                                           00110000
+// SPACE=(TRK,(3,5))                                                    00120000

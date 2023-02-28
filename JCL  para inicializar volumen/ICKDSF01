@@ -1,0 +1,27 @@
+//ICKDSF01 JOB  (FB3),'INIT 3380 DASD',CLASS=A,MSGCLASS=H,
+//             NOTIFY=&SYSUID,MSGLEVEL=(1,1)
+//* 3380/3390 INITIALIZE VOLUME
+//*
+//*   VARY DEVICE ONLINE/OFFLINE AT LEAST ONCE BEFORE RUNNING
+//*       THIS JOB, OR I/O ERROR WILL OCCUR AND NOT INITIALIZE
+//*
+//*   CHANGE
+//*     VVVV - TO CUA ADDRESS OF DASD
+//*   NEWNNN - TO NEW DASD VOLID
+//*
+//*   THEN PLACE A VVDS AT CYL 0 TRK 10-14 WITH JOB IDCDEFVV
+//*
+//STEP01  EXEC PGM=ICKDSF,REGION=1M
+//SYSPRINT  DD SYSOUT=*
+//SYSIN     DD *
+ INIT -
+      MAP                /*  MAP DEFECTS           */ -
+      UNIT(0A9C)    /*  ADDRESS               */ -
+      NOCHECK -
+      CONTINUE -
+      NOVERIFY           /*  DO NOT CHECK VOLID    */ -
+      VTOC(0,1,30)       /*  30 TRK VTOC           */ -
+      INDEX(2,1,14)      /*  14 TRK INDEX          */ -
+      OWNERID('IBMUSER') -
+      VOLID(ZUSER2)      /*  NEW VOLID             */
+//*
